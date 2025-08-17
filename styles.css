@@ -1,0 +1,170 @@
+/* ---------- CSS Variables (map these to your Figma Styles) ---------- */
+:root{
+  --bg: #0b0d12;
+  --panel: #10141b;
+  --text: #e6e9ef;
+  --muted: #b6beca;
+  --brand: #7c5cff;
+  --brand-2: #00e1c6;
+  --accent: #ffd166;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* ---------- Resets ---------- */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  line-height:1.6;
+  color:var(--text);
+  background: radial-gradient(1200px 600px at 80% -10%, rgba(124,92,255,.25), transparent 60%),
+              radial-gradient(1000px 500px at -20% 10%, rgba(0,225,198,.15), transparent 60%),
+              var(--bg);
+  background-attachment: fixed;
+}
+
+/* Containers */
+.container{max-width:1120px;margin-inline:auto;padding:0 20px}
+
+/* Notice */
+.notice{
+  background:linear-gradient(90deg, rgba(124,92,255,.25), rgba(0,225,198,.25));
+  backdrop-filter: blur(6px);
+  color:var(--text);
+  padding:10px 16px;
+  text-align:center;
+}
+
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:40;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; padding:14px 20px;
+  background: color-mix(in oklab, var(--bg), black 8%);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  backdrop-filter: blur(10px);
+}
+.logo{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:700;font-size:18px}
+.logo img{height:24px}
+.site-nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+.site-nav a{color:var(--muted);text-decoration:none}
+.site-nav a:hover{color:var(--text)}
+.nav-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:6px 10px;color:var(--text)}
+
+.cta-group{display:flex; gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:10px;
+  text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,.14)}
+.btn.solid{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#06070b;border:none}
+.btn.ghost{background:transparent;color:var(--text)}
+
+/* Hero */
+.hero{padding:64px 0}
+.hero .container{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+.hero h1{font-size: clamp(32px, 5vw, 56px); line-height:1.1; margin:0 0 12px}
+.hero p{color:var(--muted); max-width:60ch}
+.hero .actions{display:flex;gap:12px;margin:20px 0}
+.hero-metrics{display:flex;gap:24px;list-style:none;padding:0;margin:24px 0 0}
+.hero-metrics li{display:flex;flex-direction:column;align-items:flex-start;gap:2px;color:var(--muted)}
+.hero-metrics strong{font-size:22px;color:var(--text)}
+.hero-media .card{
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding:10px;
+}
+.hero-media img{display:block;max-width:100%;height:auto;border-radius:12px}
+
+/* Sections */
+section{padding:56px 20px}
+.section-head{max-width:720px;margin:0 auto 28px;text-align:center}
+.section-head h2{font-size: clamp(24px, 2.6vw, 36px); margin:0 0 8px}
+.section-head p{color:var(--muted)}
+
+/* Features */
+.features .grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:16px;
+}
+.feature{
+  background: color-mix(in oklab, var(--panel), black 6%);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  padding:20px;
+}
+.feature .icon{font-size:24px}
+
+/* Tokenomics */
+.token-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:16px;
+}
+.token-card{
+  background: color-mix(in oklab, var(--panel), black 6%);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  padding:20px;
+}
+
+/* Roadmap */
+.timeline{
+  list-style:none; margin:0; padding:0;
+  display:grid; gap:16px;
+}
+.timeline li{
+  background: color-mix(in oklab, var(--panel), black 6%);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  padding:20px; position:relative;
+}
+.t-badge{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  color:#06070b; font-weight:700;
+  border-radius: 999px; padding:4px 10px; font-size:12px;
+}
+
+/* Community */
+.cta-cards{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap:16px;
+}
+.cta-card{
+  display:flex; gap:10px; align-items:center; justify-content:center;
+  padding:18px; text-decoration:none; color:var(--text);
+  background: color-mix(in oklab, var(--panel), black 6%);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+}
+.cta-card:hover{border-color: color-mix(in oklab, var(--brand), white 30%)}
+.emoji{font-size:22px}
+
+/* Footer */
+.site-footer{padding:36px 20px; border-top:1px solid rgba(255,255,255,.06); background: color-mix(in oklab, var(--bg), black 6%)}
+.site-footer .container{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+.f-brand{display:flex; align-items:center; gap:10px}
+.logo-sm{display:inline-grid; place-items:center; width:28px; height:28px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#06070b; border-radius:8px; font-weight:800}
+.legal{color:var(--muted)}
+
+/* Responsive */
+@media (max-width: 960px){
+  .hero .container{grid-template-columns:1fr}
+  .features .grid{grid-template-columns:1fr 1fr}
+  .token-grid{grid-template-columns:1fr 1fr}
+  .cta-cards{grid-template-columns:1fr 1fr 1fr}
+}
+
+@media (max-width: 680px){
+  .site-nav ul{display:none; position:absolute; right:20px; top:60px; background: color-mix(in oklab, var(--bg), black 12%);
+    border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:10px; flex-direction:column; gap:8px; min-width:180px}
+  .site-nav ul.open{display:flex}
+  .nav-toggle{display:inline-flex}
+  .cta-group{display:none}
+  .features .grid{grid-template-columns:1fr}
+  .token-grid{grid-template-columns:1fr}
+  .cta-cards{grid-template-columns:1fr}
+}
